@@ -1,0 +1,37 @@
+prepare
+https://code.visualstudio.com/docs/languages/python
+https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack
+
+
+
+Step setup project & start django rest api
+1. Create Environment and use env ** Important **
+$ `python -m venv venv`
+$ `source venv/bin/activate`
+
+2. install django and package
+`pip install -r requirements.txt`
+
+3. migrate data only first time
+`python manage.py migrate`
+
+4. add super user
+`python manage.py createsuperuser`
+
+5. start server in docker with no reload because reduce cpu overload
+`python manage.py runserver 0.0.0.0:8000 --noreload`
+
+* get package use this command
+python -m pip freeze > requirements.txt
+
+* when update new model run command
+`python manage.py makemigrations`
+* when has new file for makemigration run 
+`python manage.py migrate`
+
+**when start new project
+`django-admin startproject hevea_base .`
+use for setup project
+
+`django-admin startapp core`
+use for create structure build code
